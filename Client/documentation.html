@@ -1,0 +1,172 @@
+<html><body><h1>Quoridor game documentation</h1></br>
+<h2>package hr.algebra.model</h2></br>
+
+<h3>public BoardState</h3></br>
+<h3>extends java.lang.Object</h3></br>
+<h3>implements java.io.Serializable</h3></br>
+
+<p>private hr.algebra.model.Tile[][] hr.algebra.model.BoardState.tiles</p></br>
+<p>private hr.algebra.model.Wall[][] hr.algebra.model.BoardState.horizontalWalls</p></br>
+<p>private hr.algebra.model.Wall[][] hr.algebra.model.BoardState.verticalWalls</p></br>
+<p>private java.util.ArrayList hr.algebra.model.BoardState.players</p></br>
+<p>private hr.algebra.model.Player hr.algebra.model.BoardState.currentPlayer</p></br>
+
+<p>public class hr.algebra.model.Player getCurrentPlayer()</p></br>
+
+<p>public class [[Lhr.algebra.model.Tile; getTiles()</p></br>
+
+<p>public class [[Lhr.algebra.model.Wall; getVerticalWalls()</p></br>
+
+<p>public class java.util.ArrayList getPlayers()</p></br>
+
+<p>public void setVerticalWalls(hr.algebra.model.Wall[][] arg0)</p></br>
+
+<p>public void setPlayers(java.util.ArrayList<hr.algebra.model.Player> arg0)</p></br>
+
+<p>public void setCurrentPlayer(hr.algebra.model.Player arg0)</p></br>
+
+<p>public void setTiles(hr.algebra.model.Tile[][] arg0)</p></br>
+
+<p>public class [[Lhr.algebra.model.Wall; getHorizontalWalls()</p></br>
+
+<p>public void setHorizontalWalls(hr.algebra.model.Wall[][] arg0)</p></br>
+
+
+<p>public hr.algebra.model.BoardState(hr.algebra.model.Tile[][] arg0, hr.algebra.model.Wall[][] arg1, hr.algebra.model.Wall[][] arg2, java.util.ArrayList<hr.algebra.model.Player> arg3, hr.algebra.model.Player arg4)</p></br>
+</br><hr></br>
+<h2>package hr.algebra.model</h2></br>
+
+<h3>public final MoveType</h3></br>
+<h3>extends java.lang.Enum java.lang.Object</h3></br>
+
+<p>public static final hr.algebra.model.MoveType hr.algebra.model.MoveType.NONE</p></br>
+<p>public static final hr.algebra.model.MoveType hr.algebra.model.MoveType.STANDARD</p></br>
+<p>private static final hr.algebra.model.MoveType[] hr.algebra.model.MoveType.$VALUES</p></br>
+
+<p>public static class [Lhr.algebra.model.MoveType; values()</p></br>
+
+<p>public static class hr.algebra.model.MoveType valueOf(java.lang.String arg0)</p></br>
+
+
+<p>private hr.algebra.model.MoveType(java.lang.String arg0, int arg1)</p></br>
+</br><hr></br>
+<h2>package hr.algebra.model</h2></br>
+
+<h3>public Player</h3></br>
+<h3>extends javafx.scene.shape.Circle javafx.scene.shape.Shape javafx.scene.Node java.lang.Object</h3></br>
+<h3>implements java.io.Serializable</h3></br>
+
+<p>private hr.algebra.model.PlayerColor hr.algebra.model.Player.color</p></br>
+<p>private double hr.algebra.model.Player.mouseX</p></br>
+<p>private double hr.algebra.model.Player.mouseY</p></br>
+<p>private double hr.algebra.model.Player.currentX</p></br>
+<p>private double hr.algebra.model.Player.currentY</p></br>
+<p>private int hr.algebra.model.Player.wallCount</p></br>
+
+<p>private void lambda$setupScene$1(javafx.scene.input.MouseEvent arg0)</p></br>
+
+<p>private void lambda$setupScene$0(javafx.scene.input.MouseEvent arg0)</p></br>
+
+<p>public class hr.algebra.model.PlayerColor getColor()</p></br>
+
+<p>public double getCurrentX()</p></br>
+
+<p>public double getCurrentY()</p></br>
+
+<p>public void highlight()</p></br>
+
+<p>public int getWallCount()</p></br>
+
+<p>public void undoHighlight()</p></br>
+
+<p>public void undoMove()</p></br>
+
+<p>public void move(int arg0, int arg1)</p></br>
+
+<p>public void setupScene(int arg0, int arg1, hr.algebra.model.PlayerColor arg2)</p></br>
+
+<p>public void setWallCount(int arg0)</p></br>
+
+
+<p>public hr.algebra.model.Player(double arg0, double arg1, hr.algebra.model.PlayerColor arg2, int arg3)</p></br>
+
+<p>public hr.algebra.model.Player(int arg0, int arg1, hr.algebra.model.PlayerColor arg2)</p></br>
+</br><hr></br>
+<h2>package hr.algebra.model</h2></br>
+
+<h3>public final PlayerColor</h3></br>
+<h3>extends java.lang.Enum java.lang.Object</h3></br>
+
+<p>public static final hr.algebra.model.PlayerColor hr.algebra.model.PlayerColor.RED</p></br>
+<p>public static final hr.algebra.model.PlayerColor hr.algebra.model.PlayerColor.BLUE</p></br>
+<p>private static final hr.algebra.model.PlayerColor[] hr.algebra.model.PlayerColor.$VALUES</p></br>
+
+<p>public static class [Lhr.algebra.model.PlayerColor; values()</p></br>
+
+<p>public static class hr.algebra.model.PlayerColor valueOf(java.lang.String arg0)</p></br>
+
+<p>public static class java.lang.String getName(hr.algebra.model.PlayerColor arg0)</p></br>
+
+<p>public static class hr.algebra.model.PlayerColor getPlayerColor(java.lang.String arg0)</p></br>
+
+
+<p>private hr.algebra.model.PlayerColor(java.lang.String arg0, int arg1)</p></br>
+</br><hr></br>
+<h2>package hr.algebra.model</h2></br>
+
+<h3>public Tile</h3></br>
+<h3>extends javafx.scene.shape.Rectangle javafx.scene.shape.Shape javafx.scene.Node java.lang.Object</h3></br>
+<h3>implements java.io.Serializable</h3></br>
+
+<p>private int hr.algebra.model.Tile.xCoordinate</p></br>
+<p>private int hr.algebra.model.Tile.yCoordinate</p></br>
+<p>private hr.algebra.model.Player hr.algebra.model.Tile.player</p></br>
+
+<p>public boolean hasPlayer()</p></br>
+
+<p>public int getXCoordinate()</p></br>
+
+<p>public int getYCoordinate()</p></br>
+
+<p>public void setupScene()</p></br>
+
+<p>public void setPlayer(hr.algebra.model.Player arg0)</p></br>
+
+<p>public class hr.algebra.model.Player getPlayer()</p></br>
+
+
+<p>public hr.algebra.model.Tile(int arg0, int arg1)</p></br>
+
+<p>public hr.algebra.model.Tile(int arg0, int arg1, hr.algebra.model.Player arg2)</p></br>
+</br><hr></br>
+<h2>package hr.algebra.model</h2></br>
+
+<h3>public Wall</h3></br>
+<h3>extends javafx.scene.shape.Rectangle javafx.scene.shape.Shape javafx.scene.Node java.lang.Object</h3></br>
+<h3>implements java.io.Serializable</h3></br>
+
+<p>private int hr.algebra.model.Wall.xCoordinate</p></br>
+<p>private int hr.algebra.model.Wall.yCoordinate</p></br>
+<p>private boolean hr.algebra.model.Wall.isVertical</p></br>
+<p>private hr.algebra.model.Player hr.algebra.model.Wall.placedBy</p></br>
+
+<p>public int getXCoordinate()</p></br>
+
+<p>public int getYCoordinate()</p></br>
+
+<p>public boolean isPlaced()</p></br>
+
+<p>public boolean isVertical()</p></br>
+
+<p>public void setupScene()</p></br>
+
+<p>public void placeWall(hr.algebra.model.Player arg0)</p></br>
+
+<p>public class hr.algebra.model.Player getPlayer()</p></br>
+
+
+<p>public hr.algebra.model.Wall(int arg0, int arg1, boolean arg2, hr.algebra.model.Player arg3)</p></br>
+
+<p>public hr.algebra.model.Wall(int arg0, int arg1, boolean arg2)</p></br>
+</br><hr></br>
+</body></html>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="590.0" prefWidth="770.0" style="-fx-background-color: #2b2727;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.GameScreenController">
+   <children>
+      <ScrollPane fx:id="spContainer" layoutX="10.0" layoutY="10.0" prefHeight="321.0" prefWidth="200.0">
+         <content>
+            <VBox fx:id="vbMessages" prefHeight="319.0" prefWidth="198.0" style="-fx-background-color: #474444;">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <Pane fx:id="pnlBoard" layoutX="218.0" layoutY="10.0" prefHeight="545" prefWidth="545" />
+      <VBox layoutX="8.0" layoutY="339.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <HBox prefHeight="39.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="tfMessage" onKeyReleased="#onEnterPress" prefHeight="25.0" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="btnSendMsg" mnemonicParsing="false" onAction="#sendChatMessage" prefHeight="25.0" prefWidth="50.0" text="Send" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="191.0">
+               <children>
+                  <Button fx:id="btnSaveState" alignment="CENTER" mnemonicParsing="false" onAction="#serialize" prefHeight="25.0" prefWidth="90.0" text="Save state">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnLoadState" alignment="CENTER" mnemonicParsing="false" onAction="#deserialize" prefHeight="25.0" prefWidth="90.0" text="Load state">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="191.0">
+               <children>
+                  <Button fx:id="btnSaveReplay" mnemonicParsing="false" onAction="#saveReplay" prefHeight="25.0" prefWidth="90.0" text="Save replay">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnReplay" mnemonicParsing="false" onAction="#replayGame" prefHeight="25.0" prefWidth="90.0" text="Replay game">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="191.0">
+               <children>
+                  <Button fx:id="btnGenerateDoc" mnemonicParsing="false" onAction="#generateDocumentation" prefHeight="25.0" prefWidth="90.0" text="Generate doc">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="35.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="lblPlayer" text="Your player color: " textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Segoe UI" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="lblClock1" alignment="CENTER" contentDisplay="CENTER" text="Time elapsed:" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="lblClock" text="00 : 00" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+      <Label fx:id="lblRedPlayerWalls" layoutX="327.0" layoutY="563.0" text="Red player walls:" textFill="RED">
+         <font>
+            <Font name="Segoe UI" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblBluePlayerWalls" layoutX="515.0" layoutY="560.0" text="Blue player walls:" textFill="#0062ff">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
